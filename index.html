@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Advice generator app</title>
+
+
+
+</head>
+<body>
+
+  <main class="container">
+
+    <section class="advice">
+
+      <div class="advice__box">
+        <h2 class="advice__id">ADVICE # <span class="advice__id-no">117</span></h2>
+
+        <div class="advice__text-box">
+          <h1 class="advice__text">It is easy to sit up and take notice, what's difficult is getting up and taking action
+          </h1>
+        </div>
+
+        <picture>
+          <source  media="(max-width: 640px)" srcset="/images/pattern-divider-mobile.svg"/>
+          <source  media="(min-width: 640px)" srcset="/images/pattern-divider-desktop.svg"/>
+          <img class="line-img" src="/images/pattern-divider-desktop.svg" alt="side-image" />
+        </picture>
+      </div>
+
+      <div class="advice__circle-button">
+        <img src="/images/icon-dice.svg" alt="dice-icon">
+      </div>
+
+    </section>
+
+
+  </main>
+
+  <script>
+
+    const adviceId = document.querySelector(".advice__id-no");
+    const adviceText = document.querySelector(".advice__text");
+    const button = document.querySelector(".advice__circle-button")
+
+
+
+    const API_URL = "https://api.adviceslip.com/advice";
+
+    const advice = async ()=>{
+
+      const responce = await fetch(API_URL);
+      const data = await responce.json();
+      console.log(data.slip.advice);
+      console.log(data);
+
+      adviceId.innerHTML  = data.slip.id;
+      adviceText.innerHTML = data.slip.advice;
+    }
+
+    advice();
+
+    button.addEventListener("click", advice);
+
+  </script>
+</body>
+</html>

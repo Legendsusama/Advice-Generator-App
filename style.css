@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+
+  --light-cyan : hsl(193, 38%, 86%);
+  --neon-green : hsl(150, 100%, 66%);
+  --grayish-blue : hsl(217, 19%, 38%);
+  --dark-grayish-blue : hsl(217, 19%, 24%);
+  --dark-blue : hsl(218, 23%, 16%);
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+
+}
+
+.container {
+
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+
+}
+
+.advice {
+
+  max-width: 540px;
+  width: 100%;
+  min-height: 330px;
+  background-color: var(--dark-grayish-blue);
+  font-family: "Manrope", sans-serif;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+
+}
+
+.advice__box {
+
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  
+
+}
+
+.advice__id {
+
+  color: var(--neon-green);
+  font-size: 14px;
+  letter-spacing: 3px;
+
+}
+
+.advice__text::before, .advice__text::after {
+  content: '"';
+  
+}
+
+.advice__text-box {
+
+  margin-top: 25px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  min-height: 152px;
+  padding-bottom: 10px;
+  font-weight:700;
+
+}
+
+.advice__text {
+  text-align: center;
+}
+
+.advice__circle-button {
+
+  width: 60px;
+  height: 60px;
+  background-color: var(--neon-green);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+  outline: none;
+  
+
+}
+
+.advice__circle-button:hover {
+
+  box-shadow: 0px 0px 34px 13px var(--neon-green);
+
+}
+
+.line-img {
+  width: 100%;
+}
